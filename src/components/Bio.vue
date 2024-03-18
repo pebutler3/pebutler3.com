@@ -12,16 +12,6 @@
   </div>
 </template>
 
-<script setup>
-import { defineProps } from 'vue';
-
-defineProps({
-  publicRepos: null,
-  publicReposUrl: null
-});
-
-</script>
-
 <style scoped>
 h2 {
   background: black;
