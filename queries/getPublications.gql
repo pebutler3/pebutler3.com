@@ -1,0 +1,17 @@
+query GET_PUBLICATIONS {
+	publication(host: "pebutler3.com/blog") {
+    title
+    posts(first: 20) {
+      edges {
+        node {
+          id
+          slug
+          title
+          content {
+            html
+          }
+        }
+      }
+    }
+  }
+}
