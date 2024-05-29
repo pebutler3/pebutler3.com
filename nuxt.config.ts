@@ -5,6 +5,7 @@ export default defineNuxtConfig({
     port: 8888
   },
   modules: ['nuxt-graphql-client'],
+  plugins: ['~/plugins/vercel.client.js'],
   runtimeConfig: {
     public: {
       GQL_HOST: 'https://gql.hashnode.com'
