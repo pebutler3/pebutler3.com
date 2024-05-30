@@ -28,12 +28,14 @@ const articles = [
         consistent and innovative member of numerous teams. From fast-growing startups to social media companies and
         some of the world's most recognizable brands, I've successfully navigated varied environments, always hitting
         the ground running.</p>
-      <p><strong>Current Position: </strong>I am a Senior Software Engineer @ Upland with a focus on the front-end.</p>
+      <p><strong>Current Position: </strong>I am a Senior Software Engineer on the Kapost Team @ Upland with a focus on
+        the front-end.</p>
       <p>Living in <strong>Denver, Colorado</strong></p>
       <h2>Recent Articles</h2>
       <ul>
-        <li v-for="article in publications.edges" :key="article.node.id">
+        <li v-for="(article, i) in publications.edges" :key="article.node.id">
           <a :href="`/blog/${article.node.slug}`">{{ article.node.title }}</a>
+          <span class="latest" v-if="i === 0">Latest</span>
         </li>
         <li v-for="article in articles" :key="article.id">
           <a :href="article.url">{{ article.title }}</a>
@@ -45,7 +47,7 @@ const articles = [
 
 <style scoped>
 h2 {
-  background: black;
+  background-color: black;
   color: white;
   display: inline-block;
   padding: 0.25rem 1rem;
@@ -64,5 +66,22 @@ h2 {
 
 ul {
   margin-top: 1rem;
+}
+
+li {
+  align-items: center;
+  display: flex;
+}
+
+li span {
+  background-color: #ffa6ff;
+  border-radius: 5000px;
+  color: purple;
+  font-size: 10px;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  text-transform: uppercase;
+  width: auto;
 }
 </style>
