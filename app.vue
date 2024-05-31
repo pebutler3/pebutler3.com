@@ -7,8 +7,12 @@
 
 <style>
 :root {
-  --extra-lightgrey: #f9f9f9;
   --hr-height: 2px;
+
+  /* colors */
+  --extra-lightgrey: #f9f9f9;
+  --light-purple: #ffa6ff;
+  --lighter-purple: #ffa6ff7a;
 }
 
 body {

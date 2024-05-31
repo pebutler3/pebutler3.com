@@ -31,16 +31,18 @@ const articles = [
       <p><strong>Current Position: </strong>I am a Senior Software Engineer on the Kapost Team @ Upland with a focus on
         the front-end.</p>
       <p>Living in <strong>Denver, Colorado</strong></p>
-      <h2>Recent Articles</h2>
-      <ul>
-        <li v-for="(article, i) in publications.edges" :key="article.node.id">
-          <a :href="`/blog/${article.node.slug}`">{{ article.node.title }}</a>
-          <span class="latest" v-if="i === 0">Latest</span>
-        </li>
-        <li v-for="article in articles" :key="article.id">
-          <a :href="article.url">{{ article.title }}</a>
-        </li>
-      </ul>
+      <div class="recent-articles">
+        <h2>Recent Articles</h2>
+        <ul>
+          <li v-for="(article, i) in publications.edges" :key="article.node.id">
+            <a :href="`/blog/${article.node.slug}`">{{ article.node.title }}</a>
+            <span class="latest" v-if="i === 0">Latest</span>
+          </li>
+          <li v-for="article in articles" :key="article.id">
+            <a :href="article.url">{{ article.title }}</a>
+          </li>
+        </ul>
+      </div>
     </section>
   </div>
 </template>
@@ -74,7 +76,7 @@ li {
 }
 
 li span {
-  background-color: #ffa6ff;
+  background-color: var(--light-purple);
   border-radius: 5000px;
   color: purple;
   font-size: 10px;
@@ -83,5 +85,17 @@ li span {
   padding: 0.25rem 0.5rem;
   text-transform: uppercase;
   width: auto;
+}
+
+li a {
+  border-bottom: 1px solid;
+  margin: 0.25rem 0;
+  text-decoration: none;
+}
+
+.recent-articles {
+  background-color: var(--lighter-purple);
+  border-radius: 5px;
+  padding: 1rem;
 }
 </style>
