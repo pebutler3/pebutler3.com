@@ -13,6 +13,7 @@
   --extra-lightgrey: #f9f9f9;
   --light-purple: #ffa6ff;
   --lighter-purple: #ffa6ff7a;
+  --bright-blue: #00e7ff;
 }
 
 body {

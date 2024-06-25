@@ -32,11 +32,20 @@ const articles = [
         the front-end.</p>
       <p>Living in <strong>Denver, Colorado</strong></p>
       <div class="recent-articles">
+        <div class="projects">
+          <h2>Projects</h2>
+          <ul>
+            <li>
+              <a href="https://noodles-ui.vercel.app">Noodles UI</a>
+              <span class="label label--beta"><em>Beta</em></span>
+            </li>
+          </ul>
+        </div>
         <h2>Recent Articles</h2>
         <ul>
           <li v-for="(article, i) in publications.edges" :key="article.node.id">
             <a :href="`/blog/${article.node.slug}`">{{ article.node.title }}</a>
-            <span class="latest" v-if="i === 0">Latest</span>
+            <span class="label label--latest" v-if="i === 0">Latest</span>
           </li>
           <li v-for="article in articles" :key="article.id">
             <a :href="article.url">{{ article.title }}</a>
@@ -67,7 +76,7 @@ h2 {
 }
 
 ul {
-  margin-top: 1rem;
+  margin: 1rem 0;
 }
 
 li {
@@ -75,17 +84,7 @@ li {
   display: flex;
 }
 
-li span {
-  background-color: var(--light-purple);
-  border-radius: 5000px;
-  color: purple;
-  font-size: 10px;
-  font-weight: bold;
-  margin-left: 0.5rem;
-  padding: 0.25rem 0.5rem;
-  text-transform: uppercase;
-  width: auto;
-}
+li span {}
 
 li a {
   border-bottom: 1px solid;
@@ -97,5 +96,26 @@ li a {
   background-color: var(--lighter-purple);
   border-radius: 5px;
   padding: 1rem;
+}
+
+.label {
+  font-size: 10px;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  text-transform: uppercase;
+  width: auto;
+}
+
+.label--latest {
+  background-color: var(--light-purple);
+  border-radius: 5000px;
+  color: purple;
+}
+
+.label--beta {
+  background-color: var(--bright-blue);
+  border-radius: 5000px;
+  color: purple;
 }
 </style>
