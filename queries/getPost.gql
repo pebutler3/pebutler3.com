@@ -1,8 +1,0 @@
-query GET_POST ($id: ID!) {
-	post(id: $id) {
-    title
-    content {
-      html
-    }
-  }  
-}
